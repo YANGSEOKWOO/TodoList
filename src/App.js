@@ -1,9 +1,13 @@
-function Todo() {
+import React from 'react';
+import './App.css';
+import Todo from './Todo';
+
+function App() {
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className="App">
+      <Todo />
     </div>
   );
 }
 
-export default Todo;
+export default App;
