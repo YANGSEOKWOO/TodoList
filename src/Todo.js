@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Todo.css';
 
 function Todo() {
   const [items, setItems] = useState([]);
@@ -29,24 +30,25 @@ function Todo() {
   }
 
   return (
-    <div>
-      <h1>Todo List</h1>
-      <ul>
+    <div className="todo-container">
+      <h1 className="todo-title">Todo List</h1>
+      <ul className="todo-list">
         {items.map((item, index) => (
-          <li key={index}>
+          <li key={index} className={item.completed ? 'todo-item todo-completed' : 'todo-item'}>
             <input
               type="checkbox"
               checked={item.completed}
               onChange={() => toggleComplete(index)}
+              className="todo-checkbox"
             />
-            {item.text}
-            <button onClick={() => deleteItem(index)}>Delete</button>
+            <span className="todo-text">{item.text}</span>
+            <button onClick={() => deleteItem(index)} className="todo-delete-btn">Delete</button>
           </li>
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="newItem" />
-        <button type="submit">Add</button>
+        <input type="text" name="newItem" className="todo-input" />
+        <button type="submit" className="todo-add-btn">Add</button>
       </form>
     </div>
   );
