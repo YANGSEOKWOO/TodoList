@@ -77,7 +77,7 @@ function Todo() {
       </form>
       {incompleteItems.length > 0 && (
         <div className="todo-incomplete">
-          <h2>You still have {incompleteItems.length} incomplete items:</h2>
+          <h2> 해결하지 못한 {incompleteItems.length}개의 목록</h2>
           <ul className="todo-incomplete-list">
             {incompleteItems.map((item, index) => (
               <li key={index} className="todo-incomplete-item">
